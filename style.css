@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Comic+Relief:wght@400;700&display=swap');
+
+body {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    font-family: "Cantarell", sans-serif;
+    color: white;
+}
+
+header {
+    color: yellow;
+    text-decoration: underline;
+}
+
+.left-side {
+    border-right: 2px solid white;
+    width: 150vh;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.buttons img {
+    width: 60px;
+    height: 60px;
+}
+
+.special-style {
+    background-color: #211F24;
+}

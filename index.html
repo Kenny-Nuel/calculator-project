@@ -7,100 +7,128 @@
     <title>Calculator project</title>
 </head>
 <body>
-    <!--the left hand side of the calculator -->
-    <div class="left-side">
-        <header>
-            <p>Calculator</p>
-        </header>
+    <div class="section-container">
+        <!--the left hand side of the calculator -->
+        <div class="left-side">
+            <header>
+                <p>Calculator</p>
+            </header>
 
-        <!--the calculator screen -->
-        <div class="calc-screen">
-            <p>0</p>
-            <p>0</p>
+            <!--the calculator screen -->
+            <div class="calc-screen">
+                <p class="operation">256.1 + 5.3</p>
+                <p class="operation-result">261.4</p>
+            </div>
+
+            <!-- the calculator buttons -->
+            <div class="calculator">
+                <button>C</button>
+                <button>÷</button>
+                <button>×</button>
+                <button>⌫</button>
+
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>−</button>
+
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>+</button>
+
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="equal">=</button>
+
+                <button>%</button>
+                <button>0</button>
+                <button>.</button>
+            </div>
         </div>
 
-        <!-- the calculator buttons -->
-        <div class="buttons">
-            <img src="./calculator_assets/clear.svg" class="special-style">
-            <img src="./calculator_assets/divide.svg" class="special-style">
-            <img src="./calculator_assets/multiply.svg" class="special-style">
-            <img src="./calculator_assets/backspace.svg" class="special-style">
-        </div>
+        <!-- the right hand side of the calculator, showing the history-->
+        <div class="right-side">
+            <div class="right-side-header">
+                <h3>History</h3>
+                <button><b>X Clear</b></button>
+            </div>
 
-        <div class="buttons">
-            <p>7</p>
-            <p>8</p>
-            <p>9</p>
-            <p>-</p>
-        </div>
+            <div class="history-container">
+                <div class="history-section">
+                    <p class="time">8:15 AM</p>
+                    <div class="result">
+                        <p>256.1 + 5.3</p>
+                        <p>261.4</p>
+                    </div>
+                </div>
 
-        <div class="buttons">
-            <p>4</p>
-            <p>5</p>
-            <p>6</p>
-            <p>+</p>
-        </div>
+                <div class="history-section">
+                    <p class="time">2:15 PM</p>
+                    <div class="result">
+                        <p>200 + 5</p>
+                        <p>205</p>
+                    </div>
+                </div>
 
-        <div class="buttons">
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-            <p>=</p>
-        </div>
+                <div class="history-section">
+                    <p class="time">4:14 PM</p>
+                    <div class="result">
+                        <p>300 - 15</p>
+                        <p>275</p>
+                    </div>
+                </div>
 
-        <div class="buttons">
-            <p>%</p>
-            <p>0</p>
-            <p>.</p>
+                <div class="history-section">
+                    <p class="time">3:27 PM</p>
+                    <div class="result">
+                        <p>400 ÷ 5 </p>
+                        <p>80</p>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <p class="time">3:00 AM</p>
+                    <div class="result">
+                        <p>10 x 20</p>
+                        <p>200</p>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <p class="time">6:00 AM</p>
+                    <div class="result">
+                        <p>5 x 20</p>
+                        <p>100</p>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <p class="time">5:20 AM</p>
+                    <div class="result">
+                        <p>200 + 556</p>
+                        <p>756</p>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <p class="time">9:00 PM</p>
+                    <div class="result">
+                        <p>450 - 200</p>
+                        <p>250</p>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <p class="time">7:30 PM</p>
+                    <div class="result">
+                        <p>100 x 3</p>
+                        <p>300</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- the right hand side of the calculator, showing the history-->
-     <div class="right-side">
-        <div class="right-side-header">
-            <p>History</p>
-            <p>X Clear</p>
-        </div>
-
-        <div class="history-section">
-            <p>8:15am</p>
-            <div class="result">
-                <p>234</p>
-                <p>261</p>
-            </div>
-        </div>
-
-        <div class="history-section">
-            <p>8:15am</p>
-            <div class="result">
-                <p>234</p>
-                <p>261</p>
-            </div>
-        </div>
-
-        <div class="history-section">
-            <p>8:15am</p>
-            <div class="result">
-                <p>234</p>
-                <p>261</p>
-            </div>
-        </div>
-
-        <div class="history-section">
-            <p>8:15am</p>
-            <div class="result">
-                <p>234</p>
-                <p>261</p>
-            </div>
-        </div>
-
-        <div class="history-section">
-            <p>8:15am</p>
-            <div class="result">
-                <p>234</p>
-                <p>261</p>
-            </div>
-        </div>
-     </div>
 </body>
 </html>

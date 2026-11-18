@@ -7,34 +7,57 @@ allButtons.forEach(function (button) {
   button.addEventListener("click", function (e) {
     e.preventDefault();
 
-    // Check if the clicked button has the "number-buttons" class
     if (button.classList.contains("number-buttons")) {
-      // Concatenate the button's number onto the screen
-      operationScreen.textContent += button.innerText;
+      if (operationScreen.textContent === "0") {
+        operationScreen.textContent = button.innerText;
+      } else {
+        operationScreen.textContent += button.innerText;
+      }
     } else if (button.classList.contains("operation-sign")) {
       operationScreen.textContent += ` ${button.innerText} `;
-      console.log(operationScreen);
     } else if (button.classList.contains("clear")) {
       operationScreen.textContent = "0";
       resultScreen.textContent = "0";
+    } else if (button.classList.contains("backspace")) {
+      const finalResult = operationScreen.textContent;
+      const parts = finalResult.split("");
+      parts.pop();
+
+      const updatedfinalResult = parts.join("");
+      operationScreen.textContent = updatedfinalResult;
     } else if (button.classList.contains("equal")) {
       const finalOperation = operationScreen.textContent;
       const parts = finalOperation.trim().split(" ");
-      let runningTotal = Number(parts[0]); // 1 + 2 + 3
+      const simplified = [Number(parts[0])]; // 1 + 2 x 3
 
       for (let i = 1; i < parts.length; i += 2) {
-        const operationSign = parts[i];
+        const operator = parts[i];
         const nextNumber = Number(parts[i + 1]);
+
+        if (operator === "×") {
+          simplified[simplified.length - 1] *= nextNumber;
+        } else if (operator === "÷") {
+          simplified[simplified.length - 1] /= nextNumber;
+        } else if (operator === "%") {
+          simplified[simplified.length - 1] *= 0.01;
+        } else {
+          simplified.push(operator, nextNumber);
+        }
+      }
+
+      let runningTotal = simplified[0];
+
+      for (let i = 1; i < simplified.length; i += 2) {
+        const operationSign = simplified[i];
+        const nextNumber = simplified[i + 1];
 
         if (operationSign === "+") {
           runningTotal += nextNumber;
         } else if (operationSign === "−") {
           runningTotal -= nextNumber;
-        } else if (operationSign === "÷") {
-          runningTotal /= nextNumber;
-        } else if (operationSign === "×") {
-          runningTotal *= nextNumber;
+        }
       }
+
       resultScreen.textContent = runningTotal;
     }
   });
